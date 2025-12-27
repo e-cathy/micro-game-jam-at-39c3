@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2gmgkuxdi2co"]
+
+[ext_resource type="Texture2D" uid="uid://dw8x8kx2evuuu" path="res://textures/heart.png" id="1_f38ab"]
+
+[node name="Heart" type="Control"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Heart" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_f38ab")
+centered = false
+hframes = 2

@@ -11,9 +11,25 @@ var is_mouse_captured_in_level: bool = true
 
 var level = 0
 var current_level_node: Node
-var health: int = 3
-
+var max_health = 3
+var health: int = 3:
+	set(new_health):
+		health = new_health
+		for i in range(0, max_health):
+			var heart = $MenuLayer/GameUI/HeartsContainer.get_child(i)
+			if i < health:
+				heart.get_node("Heart").frame = 0
+			else:
+				heart.get_node("Heart").frame = 1
+			
 func _ready() -> void:
+	# Setup common UI
+	$MenuLayer/GameUI.visible = false
+	const HEART = preload("uid://c2gmgkuxdi2co")
+	for i in range(0, max_health):
+		$MenuLayer/GameUI/HeartsContainer.add_child(HEART.instantiate())
+	
+	
 	Global.set_game_manager(self)
 	DebugGlobal.debug_label = %DebugLabel
 	
@@ -36,7 +52,7 @@ func _start_game() -> void:
 
 func _process(_delta: float) -> void:
 	%TimerLabel.text = str(round(%Timer.time_left * 10)/10)
-	%HealthLabel.text = str(health)
+	#%HealthLabel.text = str(health)
 
 #region Pausing
 
