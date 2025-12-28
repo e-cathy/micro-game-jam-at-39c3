@@ -52,7 +52,8 @@ func _ready() -> void:
 func _start_game() -> void:
 	level = 0
 	score = 0
-	_show_controls()
+	InputManager.set_is_in_game(true)
+	_transition_to_level()
 
 func _process(_delta: float) -> void:
 	%TimerLabel.text = str(round(%Timer.time_left * 10) / 10)
@@ -62,6 +63,7 @@ func _process(_delta: float) -> void:
 
 func pause():
 	InputManager.set_is_paused(true)
+	%Timer.paused = true
 	move_child(menu_layer, -1)
 	pause_menu.move_to_front()
 	pause_menu.show()
@@ -69,6 +71,7 @@ func pause():
 	
 func resume():
 	InputManager.set_is_paused(false)
+	%Timer.paused = false
 	print("resume")
 	pause_menu.hide()
 	pause_menu.reset()
@@ -77,6 +80,9 @@ func resume():
 
 #region Level Loading
 func _transition_to_level() -> void:
+	if not InputManager._is_in_game:
+		return
+
 	%Timer.stop()
 	$MenuLayer/GameUI.visible = true
 	if current_level_node:
@@ -140,7 +146,7 @@ func _show_title_screen() -> void:
 	$MenuLayer/GameUI.visible = false
 	InputManager.set_is_in_game(false)
 	var title_screen: Node = load("res://ui/screens/title-screen/title_screen.tscn").instantiate()
-	title_screen.start_game.connect(_start_game)
+	title_screen.start_game.connect(_show_controls)
 	title_screen.show_credits.connect(_show_credits)
 	title_screen.show_settings_screen.connect(_show_settings_screen)
 	title_screen.quit.connect(_quit_game)
@@ -153,7 +159,7 @@ func _show_settings_screen() -> void:
 	
 func _show_controls() -> void:
 	var controls: Node = load("res://ui/screens/control-screen/control_screen.tscn").instantiate()
-	controls.tree_exited.connect(_transition_to_level)
+	controls.tree_exited.connect(_start_game)
 	menu_layer.add_child(controls)
 
 func _return_to_title_screen() -> void:
