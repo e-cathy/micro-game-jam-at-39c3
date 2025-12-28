@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnkrlhhck540r"]
+
+[ext_resource type="Script" uid="uid://bos878y16rkbk" path="res://levels/dont-move/dont_move.gd" id="1_hhdsw"]
+[ext_resource type="LabelSettings" uid="uid://84elm3bofhfp" path="res://ui/default-label-settings.tres" id="2_16m4v"]
+
+[node name="DontMove" type="Node"]
+script = ExtResource("1_hhdsw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Dont press anything!"
+label_settings = ExtResource("2_16m4v")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
