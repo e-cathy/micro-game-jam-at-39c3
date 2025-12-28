@@ -10,6 +10,7 @@ var is_mouse_captured_in_level: bool = true
 @onready var menu_layer: CanvasLayer = %MenuLayer
 
 var level = 0
+var score = 0
 var current_level_node: Node
 var max_health = 3
 var health: int = 3:
@@ -47,6 +48,7 @@ func _ready() -> void:
 	
 func _start_game() -> void:
 	level = 0
+	score = 0
 	_show_controls()
 
 func _process(_delta: float) -> void:
@@ -71,8 +73,6 @@ func resume():
 #endregion
 
 #region Level Loading
-
-
 func _next_level() -> void:
 	$MenuLayer/GameUI.visible = true
 	%Timer.stop()
@@ -86,11 +86,16 @@ func _next_level() -> void:
 func _show_level() -> void:
 	InputManager.set_is_in_game(true)
 	var next_level: Level = levels.pick_random().instantiate()
-	next_level.win.connect(_next_level)
+	next_level.win.connect(_win_level)
 	next_level.lose.connect(_lose_level)
 	add_child(next_level)
 	%Timer.start(next_level.timeout)
 	current_level_node = next_level
+
+func _win_level() -> void:
+	print("Win")
+	score = score + 1
+	_next_level()
 
 func _lose_level() -> void:
 	print("Lose")
@@ -110,11 +115,12 @@ func _lose_level() -> void:
 
 
 func _show_lose_screen() -> void:
+	print(level)
 	InputManager.set_is_in_game(false)
 	var win_screen: Control = load("res://ui/screens/win-screen/win_screen.tscn").instantiate()
 	win_screen.tree_exited.connect(_show_title_screen)
 	add_child(win_screen)
-	win_screen.set_score(level - 3) # we have to subtract 3 because lost levels also increment this "score"
+	win_screen.set_score(score) # we have to subtract 3 because lost levels also increment this "score"
 	for child in get_children():
 		if child is Level:
 			child.queue_free()
