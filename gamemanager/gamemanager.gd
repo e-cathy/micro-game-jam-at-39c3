@@ -1,6 +1,8 @@
 extends Node
 class_name GameManager
 
+enum TransitionType {WIN, LOSE, START}
+
 ## Use this when you have only one level
 @export var levels: Array[PackedScene]
 ## Whether the mouse should be captured while in a level
@@ -53,7 +55,7 @@ func _start_game() -> void:
 	level = 0
 	score = 0
 	InputManager.set_is_in_game(true)
-	_transition_to_level()
+	_transition_to_level(TransitionType.START)
 
 func _process(_delta: float) -> void:
 	%TimerLabel.text = str(round(%Timer.time_left * 10) / 10)
@@ -79,7 +81,7 @@ func resume():
 #endregion
 
 #region Level Loading
-func _transition_to_level() -> void:
+func _transition_to_level(type: TransitionType) -> void:
 	if not InputManager._is_in_game:
 		return
 
@@ -88,7 +90,7 @@ func _transition_to_level() -> void:
 	if current_level_node:
 		current_level_node.queue_free()
 		current_level_node = null
-	%"transition-screen".transition()
+	%"transition-screen".transition(type)
 
 func _next_level() -> void:
 	InputManager.set_is_in_game(true)
@@ -107,7 +109,7 @@ func _show_level() -> void:
 func _win_level() -> void:
 	print("Win")
 	score = score + 1
-	_transition_to_level()
+	_transition_to_level(TransitionType.WIN)
 
 func _lose_level() -> void:
 	print("Lose")
@@ -119,7 +121,7 @@ func _lose_level() -> void:
 	if health == 0:
 		_show_lose_screen()
 	else:
-		_transition_to_level()
+		_transition_to_level(TransitionType.LOSE)
 
 #endregion
 
