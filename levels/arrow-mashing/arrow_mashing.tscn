@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3ktphdp38cue"]
+
+[ext_resource type="Script" uid="uid://b41uf0yo1vxax" path="res://levels/arrow-mashing/arrow_mashing.gd" id="1_op578"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_op578"]
+font_size = 33
+
+[sub_resource type="BoxMesh" id="BoxMesh_op578"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcsou"]
+
+[node name="ArrowMashing" type="Node"]
+script = ExtResource("1_op578")
+timeout = 5.0
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(559, 321)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 799.00006
+offset_top = 171.0
+offset_right = 1092.0
+offset_bottom = 266.0
+rotation = 0.38395947
+text = "Follow the arrows!
+Don't missclick!"
+label_settings = SubResource("LabelSettings_op578")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(477.25, 327.02048)
+scale = Vector2(32.49999, 132.00002)
+mesh = SubResource("BoxMesh_op578")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="MeshInstance2D"]
+position = Vector2(0.61230755, 0.44961405)
+scale = Vector2(2.0984623, 0.081046395)
+mesh = SubResource("BoxMesh_vcsou")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="MeshInstance2D"]
+position = Vector2(0.523077, -0.469697)
+scale = Vector2(2.0984623, 0.081046395)
+mesh = SubResource("BoxMesh_vcsou")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(645.25, 326.02048)
+rotation = -3.1403291
+scale = Vector2(32.49999, 132.00002)
+mesh = SubResource("BoxMesh_op578")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="MeshInstance2D2"]
+position = Vector2(0.61230755, 0.44961405)
+scale = Vector2(2.0984623, 0.081046395)
+mesh = SubResource("BoxMesh_vcsou")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="MeshInstance2D2"]
+position = Vector2(0.523077, -0.469697)
+scale = Vector2(2.0984623, 0.081046395)
+mesh = SubResource("BoxMesh_vcsou")

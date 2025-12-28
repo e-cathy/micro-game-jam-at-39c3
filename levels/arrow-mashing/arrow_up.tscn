@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://mombishjf2ho"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_imtmp"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_pbjxo"]
+
+[node name="ArrowUp" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="ArrowUp" type="MeshInstance2D" parent="."]
+position = Vector2(0, 9)
+scale = Vector2(14.5, 28.500002)
+mesh = SubResource("BoxMesh_imtmp")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ArrowUp"]
+position = Vector2(-0.0010743985, -0.898081)
+rotation = -3.1421852
+scale = Vector2(2.016128, 0.83871186)
+mesh = SubResource("PrismMesh_pbjxo")
