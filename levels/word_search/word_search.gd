@@ -10,7 +10,6 @@ const BUTTONS = {
 	"ENTER": "action2",
 }
 
-
 var LETTERS = "PDONLEFTIGHTSPCEENTE"
 const DIFFICULTIES = [0.25, 0.5, 0.75]
 const UP_LEFT = Vector2i.UP + Vector2i.LEFT
