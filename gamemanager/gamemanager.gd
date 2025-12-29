@@ -117,6 +117,7 @@ func _show_level() -> void:
 
 func _win_level() -> void:
 	print("Win")
+	current_level_node.win.disconnect(_win_level)
 	score = score + 1
 	_transition_to_level(TransitionType.WIN)
 
