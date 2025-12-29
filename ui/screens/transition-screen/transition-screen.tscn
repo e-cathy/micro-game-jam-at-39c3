@@ -41,7 +41,7 @@ scale_max = 1.5
 color_initial_ramp = SubResource("GradientTexture1D_50u6d")
 
 [sub_resource type="LabelSettings" id="LabelSettings_csbsc"]
-font_size = 201
+font_size = 192
 
 [sub_resource type="Animation" id="Animation_87wqk"]
 length = 0.001
@@ -218,7 +218,7 @@ grow_vertical = 2
 [node name="CommentLbl" type="Label" parent="CenterContainer"]
 visible = false
 layout_mode = 2
-text = "NICE!"
+text = "TRY HARDER"
 label_settings = SubResource("LabelSettings_csbsc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
