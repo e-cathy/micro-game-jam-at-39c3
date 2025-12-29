@@ -155,10 +155,11 @@ func _process(delta: float) -> void:
 			else:
 				rotate_slice_z(input[2], input[1], true)
 	elif ending:
-		if check_solved():
-			win.emit()
-		else:
-			lose.emit()
+		if animating >= 1.0:
+			if check_solved():
+				win.emit()
+			else:
+				lose.emit()
 	
 	if len(animating_transforms) > 0 and animating < 1.0:
 		animating += delta / 0.25
