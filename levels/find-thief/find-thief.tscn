@@ -1,61 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://ba7e87cvw11h7"]
+[gd_scene load_steps=39 format=3 uid="uid://ba7e87cvw11h7"]
 
 [ext_resource type="Script" uid="uid://c0ewugyc3snru" path="res://levels/find-thief/find_thief.gd" id="1_rrhgp"]
 [ext_resource type="Texture2D" uid="uid://32bfirruyl4o" path="res://levels/find-thief/character_robot_sheetHD.png" id="2_gwbaa"]
 [ext_resource type="Script" uid="uid://3yotdk22qaok" path="res://levels/find-thief/player.gd" id="2_l1bqk"]
 [ext_resource type="Shader" uid="uid://demtf77aymcki" path="res://levels/find-thief/find-thief.gdshader" id="3_dxgi8"]
+[ext_resource type="Script" uid="uid://3vu456cah4bo" path="res://levels/find-thief/thief.gd" id="4_gwbaa"]
 [ext_resource type="Texture2D" uid="uid://bsp418c31q144" path="res://levels/find-thief/character_femalePerson_sheetHD.png" id="4_vt6gh"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="6_xf3t5"]
 [ext_resource type="Script" uid="uid://xbp1xyc6qq76" path="res://levels/find-thief/label.gd" id="8_gwbaa"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrhgp"]
-size = Vector2(78, 75)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_30ax6"]
-atlas = ExtResource("2_gwbaa")
-region = Rect2(0, 512, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dmevs"]
-atlas = ExtResource("2_gwbaa")
-region = Rect2(384, 256, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6agcd"]
-atlas = ExtResource("2_gwbaa")
-region = Rect2(576, 256, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8cen"]
-atlas = ExtResource("2_gwbaa")
-region = Rect2(768, 256, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ntji"]
-atlas = ExtResource("2_gwbaa")
-region = Rect2(1344, 768, 192, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_16o08"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_30ax6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dmevs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6agcd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dmevs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k8cen")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2ntji")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 10.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rrhgp"]
 radius = 20.0
@@ -153,6 +105,116 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrhgp"]
+size = Vector2(78, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16o08"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(1344, 768, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cms2t"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(1344, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sacdl"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(1536, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g4ln"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(1536, 768, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5ixs"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(1536, 256, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbqgp"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(1536, 1024, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52tuv"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(192, 256, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44wv2"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(768, 768, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30ax6"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(0, 512, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmevs"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(384, 256, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6agcd"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(576, 256, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8cen"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(768, 256, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ntji"]
+atlas = ExtResource("2_gwbaa")
+region = Rect2(1344, 768, 192, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_16o08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16o08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cms2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sacdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g4ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5ixs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbqgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52tuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44wv2")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30ax6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmevs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6agcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmevs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8cen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ntji")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrhgp"]
 shader = ExtResource("3_dxgi8")
 shader_parameter/circle_screen_pos = Vector2(0, 0)
@@ -164,23 +226,6 @@ font_size = 50
 
 [node name="find-thief" type="Node"]
 script = ExtResource("1_rrhgp")
-
-[node name="thief" type="Node2D" parent="."]
-unique_name_in_owner = true
-
-[node name="Area2D" type="Area2D" parent="thief"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="thief/Area2D"]
-position = Vector2(0, -5)
-shape = SubResource("RectangleShape2D_rrhgp")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="thief"]
-position = Vector2(0, -19.999998)
-scale = Vector2(0.4, 0.4)
-sprite_frames = SubResource("SpriteFrames_16o08")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.6304851
 
 [node name="player" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -199,6 +244,24 @@ sprite_frames = SubResource("SpriteFrames_30ax6")
 animation = &"run"
 autoplay = "idle"
 frame_progress = 0.28837392
+
+[node name="thief" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-54, 54)
+script = ExtResource("4_gwbaa")
+
+[node name="Area2D" type="Area2D" parent="thief"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thief/Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_rrhgp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="thief"]
+position = Vector2(0, -22.999998)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_16o08")
+animation = &"death"
+autoplay = "idle"
 
 [node name="occlusion_rect" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -222,6 +285,7 @@ grow_vertical = 2
 theme = ExtResource("6_xf3t5")
 
 [node name="Label" type="Label" parent="CenterContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "CATCH THE CLANKER"
 label_settings = SubResource("LabelSettings_qnddb")
@@ -232,5 +296,10 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="windelay" type="Timer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="area_entered" from="player/Area2D" to="player" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="thief/Area2D" to="thief" method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="CenterContainer/Label/Timer" to="CenterContainer/Label" method="_on_timer_timeout"]
+[connection signal="timeout" from="windelay" to="." method="_on_windelay_timeout"]
