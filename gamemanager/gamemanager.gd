@@ -101,7 +101,7 @@ func _next_level() -> void:
 func _show_level() -> void:
 	InputManager.set_is_in_game(true)
 	
-	# Choose next random level (prevent picking the same level in a row
+	# Choose next random level (prevent picking the same level two times in a row)
 	var next_level_idx = randi_range(0,levels.size()-1)
 	while next_level_idx == last_level_idx:
 		next_level_idx = randi_range(0,levels.size()-1)
