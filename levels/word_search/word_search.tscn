@@ -1,0 +1,220 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7la3ptoomkfq"]
+
+[ext_resource type="Script" uid="uid://1dvmlpbrkpxf" path="res://levels/word_search/word_search.gd" id="1_f6gxq"]
+
+[node name="WordSearch" type="Node2D"]
+script = ExtResource("1_f6gxq")
+difficulty = 0.9
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -22.0
+offset_top = -12.0
+offset_right = 1190.0
+offset_bottom = 682.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 60.0
+offset_top = 64.0
+offset_right = 1089.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Press the button in the word search:"
+uppercase = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+unique_name_in_owner = true
+modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 507.0
+offset_top = 202.0
+offset_right = 628.0
+offset_bottom = 563.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Label00" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label01" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label02" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label03" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label04" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label10" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label11" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label12" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label13" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label14" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label20" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label21" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label22" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label23" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label24" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label30" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label31" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label32" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label33" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label34" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label40" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label41" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label42" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label43" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
+
+[node name="Label44" type="Label" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "_"
+uppercase = true
