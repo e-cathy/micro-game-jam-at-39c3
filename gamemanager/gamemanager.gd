@@ -190,4 +190,5 @@ func set_world_environment(env: Environment):
 	$WorldEnvironment.environment = env
 
 func _on_timer_timeout() -> void:
-	_lose_level()
+	%Timer.stop()
+	current_level_node._timeout()
