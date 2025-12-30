@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://fx77dou1rb7k"]
+
+[ext_resource type="Script" uid="uid://ws64r8sotecs" path="res://levels/puzzle-cube/puzzle_cube.gd" id="1_3fldh"]
+
+[sub_resource type="Environment" id="Environment_e3177"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.8
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3177"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 1, 1)
+grow = true
+grow_amount = 1.0
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fldh"]
+next_pass = SubResource("StandardMaterial3D_e3177")
+albedo_color = Color(1, 0, 1, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(1, 0, 1, 1)
+stencil_outline_thickness = 1.0
+
+[node name="PuzzleCube" type="Node3D"]
+script = ExtResource("1_3fldh")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.7071069, -0.43841457, 0.5547906, 0, 0.78459245, 0.6200119, -0.7071068, 0.43841466, -0.5547906, 8.657488, 9.440143, -8.657488)
+fov = 20.0
+near = 1.0
+far = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e3177")
+
+[node name="Selection" type="CSGBox3D" parent="."]
+flip_faces = true
+size = Vector3(1, 3, 3)
+material = SubResource("StandardMaterial3D_3fldh")

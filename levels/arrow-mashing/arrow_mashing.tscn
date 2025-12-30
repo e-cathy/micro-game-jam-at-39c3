@@ -14,20 +14,20 @@ script = ExtResource("1_op578")
 timeout = 5.0
 
 [node name="Center" type="Node2D" parent="."]
-position = Vector2(559, 321)
+position = Vector2(559, 171)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 799.00006
-offset_top = 171.0
-offset_right = 1092.0
-offset_bottom = 266.0
+offset_left = 803.0
+offset_top = 121.00002
+offset_right = 1096.0
+offset_bottom = 216.00003
 rotation = 0.38395947
 text = "Follow the arrows!
 Don't missclick!"
 label_settings = SubResource("LabelSettings_op578")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(477.25, 327.02048)
+position = Vector2(477.25, 177.02)
 scale = Vector2(32.49999, 132.00002)
 mesh = SubResource("BoxMesh_op578")
 
@@ -42,7 +42,7 @@ scale = Vector2(2.0984623, 0.081046395)
 mesh = SubResource("BoxMesh_vcsou")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-position = Vector2(645.25, 326.02048)
+position = Vector2(645.25, 176.02)
 rotation = -3.1403291
 scale = Vector2(32.49999, 132.00002)
 mesh = SubResource("BoxMesh_op578")

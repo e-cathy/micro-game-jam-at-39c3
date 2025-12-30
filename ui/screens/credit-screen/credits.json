@@ -12,7 +12,8 @@
 		"url": "https://github.com/Godot-Stammtisch-Karlsruhe/godot-game-template"
 	},
 	{
-		"name": "Sample Asset",
-		"descriptor": "Sample description (optional)"
+		"name": "Kenneys Input Prompts",
+		"descriptor": "Amazing stuff.",
+		"url": "https://www.kenney.nl/assets/input-prompts"
 	}
 ]

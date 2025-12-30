@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpr6du5ydm0lw"]
+[gd_scene load_steps=11 format=3 uid="uid://bpr6du5ydm0lw"]
 
-[ext_resource type="Texture2D" uid="uid://bugrq8paq2d7t" path="res://textures/Keycap.svg" id="1_hbk1g"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_x8l5g"]
 [ext_resource type="Script" uid="uid://c1i00arsdf2mw" path="res://ui/screens/control-screen/control_screen.gd" id="2_wdxwm"]
-[ext_resource type="Texture2D" uid="uid://bett8pw3uw006" path="res://textures/Space.svg" id="4_nvllw"]
+[ext_resource type="Texture2D" uid="uid://dgsf3r2xl7h02" path="res://textures/inputs/keyboard_enter_outline.svg" id="3_qrmq2"]
+[ext_resource type="Texture2D" uid="uid://cm7sftrcvevwn" path="res://textures/inputs/keyboard_space_outline.svg" id="4_gwjbs"]
+[ext_resource type="Texture2D" uid="uid://ckeavct7komwy" path="res://textures/inputs/keyboard_w_outline.svg" id="5_qdo8b"]
+[ext_resource type="Texture2D" uid="uid://85riwmv2ajqc" path="res://textures/inputs/keyboard_a_outline.svg" id="6_y40ys"]
+[ext_resource type="Texture2D" uid="uid://cig3pab4davrm" path="res://textures/inputs/keyboard_s_outline.svg" id="7_dlymr"]
+[ext_resource type="Texture2D" uid="uid://lwqq6m7sqfcj" path="res://textures/inputs/keyboard_d_outline.svg" id="8_vvxuu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5tgjf"]
 font_size = 60
 
-[sub_resource type="LabelSettings" id="LabelSettings_27lof"]
-font_size = 41
-
-[sub_resource type="LabelSettings" id="LabelSettings_m646p"]
-font_size = 25
+[sub_resource type="LabelSettings" id="LabelSettings_kpnwp"]
+font_size = 45
 
 [node name="ControlScreen" type="Control"]
 layout_mode = 3
@@ -23,14 +24,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_x8l5g")
 script = ExtResource("2_wdxwm")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="ControlsTitle" type="Label" parent="."]
 custom_minimum_size = Vector2(731.345, 0)
@@ -48,115 +41,6 @@ text = "Controls
 label_settings = SubResource("LabelSettings_5tgjf")
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="ControlImages" type="Node2D" parent="."]
-position = Vector2(306, 378)
-scale = Vector2(0.695, 0.695)
-
-[node name="WASD" type="Node2D" parent="ControlImages"]
-
-[node name="TextureRect" type="Sprite2D" parent="ControlImages/WASD"]
-position = Vector2(-32.75, -88.75)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_hbk1g")
-
-[node name="W" type="Label" parent="ControlImages/WASD/TextureRect"]
-offset_left = -108.0
-offset_top = -180.0
-offset_right = -65.0
-offset_bottom = -117.0
-scale = Vector2(4.75306, 4.39234)
-text = "W
-"
-label_settings = SubResource("LabelSettings_27lof")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect2" type="Sprite2D" parent="ControlImages/WASD"]
-position = Vector2(-88.75, 7.25)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_hbk1g")
-
-[node name="A" type="Label" parent="ControlImages/WASD/TextureRect2"]
-offset_left = -80.0
-offset_top = -188.0
-offset_right = -45.0
-offset_bottom = -125.0
-scale = Vector2(4.75306, 4.39234)
-text = "A
-"
-label_settings = SubResource("LabelSettings_27lof")
-horizontal_alignment = 1
-
-[node name="TextureRect3" type="Sprite2D" parent="ControlImages/WASD"]
-position = Vector2(7.25, 7.25)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_hbk1g")
-
-[node name="S" type="Label" parent="ControlImages/WASD/TextureRect3"]
-offset_left = -80.0
-offset_top = -188.0
-offset_right = -45.0
-offset_bottom = -125.0
-scale = Vector2(4.75306, 4.39234)
-text = "S
-
-"
-label_settings = SubResource("LabelSettings_27lof")
-horizontal_alignment = 1
-
-[node name="TextureRect4" type="Sprite2D" parent="ControlImages/WASD"]
-position = Vector2(103.25, 7.25)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_hbk1g")
-
-[node name="D" type="Label" parent="ControlImages/WASD/TextureRect4"]
-offset_left = -80.0
-offset_top = -188.0
-offset_right = -45.0
-offset_bottom = -125.0
-scale = Vector2(4.75306, 4.39234)
-text = "D
-"
-label_settings = SubResource("LabelSettings_27lof")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Space" type="Node2D" parent="ControlImages"]
-position = Vector2(392, 8)
-
-[node name="Space2" type="Sprite2D" parent="ControlImages/Space"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_nvllw")
-
-[node name="W" type="Label" parent="ControlImages/Space/Space2"]
-offset_left = -288.0
-offset_top = -176.0
-offset_right = -161.0
-offset_bottom = -113.0
-scale = Vector2(4.75306, 4.39234)
-text = "Space"
-label_settings = SubResource("LabelSettings_27lof")
-horizontal_alignment = 1
-
-[node name="Enter" type="Node2D" parent="ControlImages"]
-
-[node name="TextureRect4" type="Sprite2D" parent="ControlImages/Enter"]
-position = Vector2(779.85614, -113.66908)
-scale = Vector2(0.36510792, 0.48021585)
-texture = ExtResource("1_hbk1g")
-
-[node name="D" type="Label" parent="ControlImages/Enter/TextureRect4"]
-offset_left = -216.74867
-offset_top = -137.82771
-offset_right = -110.74867
-offset_bottom = -20.827713
-scale = Vector2(4.75306, 4.39234)
-text = "Enter
-"
-label_settings = SubResource("LabelSettings_m646p")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -178,5 +62,83 @@ theme_override_constants/margin_bottom = 30
 [node name="Continue" type="Button" parent="CenterContainer/MarginContainer"]
 layout_mode = 2
 text = "Continue"
+
+[node name="KeyboardEnterOutline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 200.0
+offset_right = 948.0
+offset_bottom = 328.0
+texture = ExtResource("3_qrmq2")
+
+[node name="KeyboardSpaceOutline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 200.0
+offset_right = 668.0
+offset_bottom = 328.0
+texture = ExtResource("4_gwjbs")
+
+[node name="KeyboardWOutline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 220.0
+offset_right = 332.0
+offset_bottom = 348.0
+texture = ExtResource("5_qdo8b")
+
+[node name="KeyboardAOutline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 324.0
+offset_right = 228.0
+offset_bottom = 452.0
+texture = ExtResource("6_y40ys")
+
+[node name="KeyboardSOutline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 324.0
+offset_right = 332.0
+offset_bottom = 452.0
+texture = ExtResource("7_dlymr")
+
+[node name="KeyboardDOutline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 324.0
+offset_right = 436.0
+offset_bottom = 452.0
+texture = ExtResource("8_vvxuu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 390.0
+offset_bottom = 201.0
+text = "Directional"
+label_settings = SubResource("LabelSettings_kpnwp")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 160.0
+offset_right = 710.0
+offset_bottom = 201.0
+text = "Action A"
+label_settings = SubResource("LabelSettings_kpnwp")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 160.0
+offset_right = 1010.0
+offset_bottom = 201.0
+text = "Action B"
+label_settings = SubResource("LabelSettings_kpnwp")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="CenterContainer/MarginContainer/Continue" to="." method="_on_continue_pressed"]

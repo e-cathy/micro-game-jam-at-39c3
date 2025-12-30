@@ -1,10 +1,13 @@
 extends Node
 class_name GameManager
 
+enum TransitionType {WIN, LOSE, START}
+
 ## Use this when you have only one level
 @export var levels: Array[PackedScene]
 ## Whether the mouse should be captured while in a level
 var is_mouse_captured_in_level: bool = true
+var last_level_idx = -1
 
 @onready var pause_menu: Control = %PauseMenu
 @onready var menu_layer: CanvasLayer = %MenuLayer
@@ -53,7 +56,7 @@ func _start_game() -> void:
 	level = 0
 	score = 0
 	InputManager.set_is_in_game(true)
-	_transition_to_level()
+	_transition_to_level(TransitionType.START)
 
 func _process(_delta: float) -> void:
 	%TimerLabel.text = str(round(%Timer.time_left * 10) / 10)
@@ -79,7 +82,7 @@ func resume():
 #endregion
 
 #region Level Loading
-func _transition_to_level() -> void:
+func _transition_to_level(type: TransitionType) -> void:
 	if not InputManager._is_in_game:
 		return
 
@@ -88,7 +91,7 @@ func _transition_to_level() -> void:
 	if current_level_node:
 		current_level_node.queue_free()
 		current_level_node = null
-	%"transition-screen".transition()
+	%"transition-screen".transition(type)
 
 func _next_level() -> void:
 	InputManager.set_is_in_game(true)
@@ -97,7 +100,15 @@ func _next_level() -> void:
 
 func _show_level() -> void:
 	InputManager.set_is_in_game(true)
-	var next_level: Level = levels.pick_random().instantiate()
+	
+	# Choose next random level (prevent picking the same level two times in a row)
+	var next_level_idx = randi_range(0,levels.size()-1)
+	while next_level_idx == last_level_idx:
+		next_level_idx = randi_range(0,levels.size()-1)
+	
+	var next_level: Level = levels[next_level_idx].instantiate()
+	last_level_idx = next_level_idx
+	
 	next_level.win.connect(_win_level)
 	next_level.lose.connect(_lose_level)
 	add_child(next_level)
@@ -107,7 +118,7 @@ func _show_level() -> void:
 func _win_level() -> void:
 	print("Win")
 	score = score + 1
-	_transition_to_level()
+	_transition_to_level(TransitionType.WIN)
 
 func _lose_level() -> void:
 	print("Lose")
@@ -119,7 +130,7 @@ func _lose_level() -> void:
 	if health == 0:
 		_show_lose_screen()
 	else:
-		_transition_to_level()
+		_transition_to_level(TransitionType.LOSE)
 
 #endregion
 
@@ -127,10 +138,10 @@ func _lose_level() -> void:
 
 func _show_lose_screen() -> void:
 	InputManager.set_is_in_game(false)
-	var win_screen: Control = load("res://ui/screens/win-screen/win_screen.tscn").instantiate()
-	win_screen.tree_exited.connect(_show_title_screen)
-	add_child(win_screen)
-	win_screen.set_score(score)
+	var game_over_screen: Control = load("res://ui/screens/game-over-screen/game_over_screen.tscn").instantiate()
+	game_over_screen.tree_exited.connect(_show_title_screen)
+	add_child(game_over_screen)
+	game_over_screen.set_score(score)
 	for child in get_children():
 		if child is Level:
 			child.queue_free()
@@ -188,4 +199,5 @@ func set_world_environment(env: Environment):
 	$WorldEnvironment.environment = env
 
 func _on_timer_timeout() -> void:
-	_lose_level()
+	%Timer.stop()
+	current_level_node._timeout()

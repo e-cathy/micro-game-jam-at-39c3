@@ -1,35 +1,36 @@
 extends Control
 
-@export var transition_time : float = 1
+@export var transition_time : float
 
 signal transition_done
 
-func transition() -> void:
+func _ready() -> void:
+	visible = false
+	$AnimationPlayer.speed_scale=(1.0/transition_time)*5.0
+	$AnimationPlayer.play("RESET")
+
+func transition(type: GameManager.TransitionType) -> void:
+	match(type):
+		GameManager.TransitionType.WIN: 
+			$CenterContainer/CommentLbl.text = ["NICE", "GREAT", "WOW", "SOO GOOD", "AMAZING", "PERFECT", "EXCELLENT", "FANTASTIC", "SUPERB", "BRILLIANT"].pick_random()
+			$CenterContainer/CommentLbl.modulate = Color.GREEN
+			$GPUParticles2D.emitting = true
+			$GPUParticles2D2.emitting = true
+		GameManager.TransitionType.LOSE: 
+			$CenterContainer/CommentLbl.text = ["YOU SUCK", "LOOSER", "IDIOT", "...", "NOT GOOD!", "*FACEPALM*", "TRY AGAIN", "FAILURE", "FAIL", "SO SAD"].pick_random()
+			$CenterContainer/CommentLbl.modulate = Color.RED
+		GameManager.TransitionType.START: 
+			$CenterContainer/CommentLbl.text = ""
 	visible = true
-	var transition_step_time = transition_time / 4.0
+	$AnimationPlayer.play("ready_set_go")
 	"""
 	after step 1, display ready
 	step 2, set
 	step 3, go
 	step 4 we are done
 	"""
-	%readyTimer.start(transition_step_time * 1)
-	%setTimer.start(transition_step_time * 2)
-	%goTimer.start(transition_step_time * 3)
-	%doneTimer.start(transition_time)
 
-func _on_ready_timer_timeout() -> void:
-	$CenterContainer/VBoxContainer/ready.visible = true
-
-func _on_set_timer_timeout() -> void:
-	$CenterContainer/VBoxContainer/set.visible = true
-
-func _on_go_timer_timeout() -> void:
-	$CenterContainer/VBoxContainer/go.visible = true
-
-func _on_done_timer_timeout() -> void:
-	$CenterContainer/VBoxContainer/ready.visible = false
-	$CenterContainer/VBoxContainer/set.visible = false
-	$CenterContainer/VBoxContainer/go.visible = false
+func _on_done() -> void:
+	$AnimationPlayer.play("RESET")
 	visible = false
 	transition_done.emit()

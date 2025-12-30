@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://g2g8hydsgxid"]
+
+[ext_resource type="Script" uid="uid://dgtme0a6lym5c" path="res://ui/screens/game-over-screen/game_over_screen.gd" id="1_fpprq"]
+[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_wk7ty"]
+[ext_resource type="FontFile" uid="uid://buuct0rog8400" path="res://ui/themes/Kario39C3Var-Roman.ttf" id="3_cxcm7"]
+
+[sub_resource type="Gradient" id="Gradient_cxcm7"]
+interpolation_color_space = 2
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rbmgw"]
+font_size = 100
+font_color = Color(0.01, 0.01, 0.01, 1)
+outline_size = 18
+outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvyxm"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_cxcm7"]
+font_size = 145
+outline_size = 40
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_jc1o0"]
+base_font = ExtResource("3_cxcm7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wk7ty"]
+font = SubResource("FontVariation_jc1o0")
+font_size = 30
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wk7ty")
+script = ExtResource("1_fpprq")
+score_gradient = SubResource("Gradient_cxcm7")
+
+[node name="GameOverLbl" type="Label" parent="."]
+custom_minimum_size = Vector2(731.345, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.6725
+offset_top = -228.0
+offset_right = 365.6725
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "Game Over"
+label_settings = SubResource("LabelSettings_rbmgw")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="YourScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -98.0
+offset_right = 108.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your Score:"
+label_settings = SubResource("LabelSettings_rvyxm")
+horizontal_alignment = 1
+
+[node name="ScoreLbl" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -12.0
+offset_right = 108.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = SubResource("LabelSettings_cxcm7")
+horizontal_alignment = 1
+
+[node name="ReturnToMainMenu" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = 116.0
+offset_right = 108.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press anything to return to the main menu"
+label_settings = SubResource("LabelSettings_wk7ty")
+horizontal_alignment = 1
