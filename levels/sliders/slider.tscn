@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0lw0nynf6j27"]
+
+[ext_resource type="Script" uid="uid://b8g7ri7qe7c7o" path="res://levels/sliders/slider.gd" id="1_cigmn"]
+
+[node name="Slider" type="CheckButton"]
+offset_right = 44.0
+offset_bottom = 24.0
+script = ExtResource("1_cigmn")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

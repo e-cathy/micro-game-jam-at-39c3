@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6rymnwpyw47w"]
+
+[ext_resource type="Script" uid="uid://b4m03kxklb2d1" path="res://levels/sliders/sliders.gd" id="1_ysddx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5661q"]
+font_size = 33
+
+[node name="Example" type="Node"]
+script = ExtResource("1_ysddx")
+timeout = 5.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="HelpLabel" type="Label" parent="PanelContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_5661q")
+horizontal_alignment = 1
+
+[node name="CorrectPositionsLabel" type="Label" parent="PanelContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="SliderContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
