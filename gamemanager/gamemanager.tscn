@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgu0vbr50x7di"]
+[gd_scene load_steps=14 format=3 uid="uid://cgu0vbr50x7di"]
 
 [ext_resource type="Script" uid="uid://cluu0cgltsenj" path="res://gamemanager/gamemanager.gd" id="1_htktm"]
 [ext_resource type="PackedScene" uid="uid://bilai15byqef2" path="res://ui/screens/pause-menu/pause_menu.tscn" id="2_b2lg8"]
+[ext_resource type="PackedScene" uid="uid://dvafkdhjqa0f0" path="res://levels/type_fast/type_fast.tscn" id="2_gpq8w"]
 [ext_resource type="PackedScene" uid="uid://dnkrlhhck540r" path="res://levels/dont-move/dont-move.tscn" id="3_3c0xs"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="3_8qpx4"]
 [ext_resource type="PackedScene" uid="uid://d3ktphdp38cue" path="res://levels/arrow-mashing/arrow_mashing.tscn" id="4_t8gma"]
@@ -21,7 +22,7 @@ shadow_size = 0
 [node name="Gamemanager" type="Node"]
 process_mode = 3
 script = ExtResource("1_htktm")
-levels = Array[PackedScene]([ExtResource("3_3c0xs"), ExtResource("4_t8gma"), ExtResource("5_i7ped"), ExtResource("6_i7ped"), ExtResource("7_6xjqa"), ExtResource("7_6tx2o")])
+levels = Array[PackedScene]([ExtResource("3_3c0xs"), ExtResource("4_t8gma"), ExtResource("5_i7ped"), ExtResource("6_i7ped"), ExtResource("7_6xjqa"), ExtResource("7_6tx2o"), ExtResource("2_gpq8w")])
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true

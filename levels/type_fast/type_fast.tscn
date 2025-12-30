@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvafkdhjqa0f0"]
+
+[ext_resource type="Script" uid="uid://d265n5ecw3h4q" path="res://levels/type_fast/type_fast.gd" id="1_ew7nu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ujxwy"]
+font_size = 35
+
+[node name="TypeFast" type="Node"]
+script = ExtResource("1_ew7nu")
+timeout = 5.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VSplitContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="MarginContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Type!"
+label_settings = SubResource("LabelSettings_ujxwy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text" type="RichTextLabel" parent="MarginContainer/VSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 25
+text = "wasd wasd
+wasd
+wasd"
+shortcut_keys_enabled = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+offset = Vector2(576, 324)
