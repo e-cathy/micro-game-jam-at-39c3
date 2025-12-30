@@ -13,10 +13,13 @@ var next_dir := Vector2i.ZERO
 
 var apples: Array[Vector2i] = []
 
-@onready var tilemap := $TileMapLayer
+@onready var tilemap := $CanvasLayer/TileMapLayer
 
 var tick := 0
 var every_th_tick := 8
+
+var blinkrate := 0.33
+var blinkacc := 0.0
 
 func _ready() -> void:
 	for i in 4:
@@ -71,10 +74,16 @@ func check_win() -> void:
 	if apples.is_empty():
 		win.emit()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	blinkacc = blinkacc + delta
 	clear_board()
 	draw_snake()
-	draw_apples()
+	if blinkacc < blinkrate:
+		draw_apples()
+	elif blinkacc < 2 * blinkrate:
+		pass
+	elif blinkacc > 2 * blinkrate:
+		blinkacc = 0.0
 
 func clear_board() -> void:
 	for x in range(1,BORDER_RIGHT):
