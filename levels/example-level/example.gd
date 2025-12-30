@@ -1,5 +1,6 @@
 extends Level # IMPORTANT: Levels must extend Level
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Difficulty.text = $Difficulty.text.replace("$$", str(difficulty))
