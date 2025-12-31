@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://77at6m3gk65p" path="res://textures/stopclock.png" id="7_3c0xs"]
 [ext_resource type="PackedScene" uid="uid://c6rymnwpyw47w" path="res://levels/sliders/sliders.tscn" id="7_6tx2o"]
 [ext_resource type="PackedScene" uid="uid://ba7e87cvw11h7" path="res://levels/find-thief/find-thief.tscn" id="7_6xjqa"]
+[ext_resource type="PackedScene" uid="uid://cuq5sjlgwfp4i" path="res://levels/mini-snake/mini_snake.tscn" id="8_6tx2o"]
 [ext_resource type="PackedScene" uid="uid://rlwfvff2ronp" path="res://levels/blind-pipes/blind_pipes.tscn" id="8_6tx2o"]
 [ext_resource type="PackedScene" uid="uid://cqjqjog7n71ke" path="res://ui/screens/transition-screen/transition-screen.tscn" id="8_y84hv"]
 
@@ -23,7 +24,7 @@ shadow_size = 0
 [node name="Gamemanager" type="Node"]
 process_mode = 3
 script = ExtResource("1_htktm")
-levels = Array[PackedScene]([ExtResource("3_3c0xs"), ExtResource("4_t8gma"), ExtResource("5_i7ped"), ExtResource("6_i7ped"), ExtResource("7_6xjqa"), ExtResource("7_6tx2o"), ExtResource("2_gpq8w")])
+levels = Array[PackedScene]([ExtResource("3_3c0xs"), ExtResource("4_t8gma"), ExtResource("5_i7ped"), ExtResource("6_i7ped"), ExtResource("7_6xjqa"), ExtResource("7_6tx2o"), ExtResource("8_6tx2o")])
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
