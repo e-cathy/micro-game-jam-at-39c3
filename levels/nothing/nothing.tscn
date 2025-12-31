@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://jlqe4pwr6rvm"]
+
+[ext_resource type="Script" uid="uid://bfw1au7xab8v1" path="res://levels/nothing/nothing.gd" id="1_i61q4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ujxwy"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrh33"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xgwq"]
+font_color = Color(0.39607844, 1, 0.40784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tnf40"]
+font_color = Color(1, 0.3254902, 0.25490198, 1)
+
+[node name="Nothing" type="Node"]
+script = ExtResource("1_i61q4")
+timeout = 5.0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -159.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "This is the example Level."
+label_settings = SubResource("LabelSettings_ujxwy")
+horizontal_alignment = 1
+
+[node name="Difficulty" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -104.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "difficulty: $$"
+label_settings = SubResource("LabelSettings_qrh33")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="WinHintLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Press UP to Win"
+label_settings = SubResource("LabelSettings_4xgwq")
+
+[node name="LoseHintLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Press DOWN to Lose"
+label_settings = SubResource("LabelSettings_tnf40")

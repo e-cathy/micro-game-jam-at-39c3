@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cluu0cgltsenj" path="res://gamemanager/gamemanager.gd" id="1_htktm"]
 [ext_resource type="PackedScene" uid="uid://bilai15byqef2" path="res://ui/screens/pause-menu/pause_menu.tscn" id="2_b2lg8"]
+[ext_resource type="PackedScene" uid="uid://dvafkdhjqa0f0" path="res://levels/type_fast/type_fast.tscn" id="2_gpq8w"]
 [ext_resource type="PackedScene" uid="uid://dnkrlhhck540r" path="res://levels/dont-move/dont-move.tscn" id="3_3c0xs"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="3_8qpx4"]
 [ext_resource type="PackedScene" uid="uid://d3ktphdp38cue" path="res://levels/arrow-mashing/arrow_mashing.tscn" id="4_t8gma"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6rymnwpyw47w" path="res://levels/sliders/sliders.tscn" id="7_6tx2o"]
 [ext_resource type="PackedScene" uid="uid://ba7e87cvw11h7" path="res://levels/find-thief/find-thief.tscn" id="7_6xjqa"]
 [ext_resource type="PackedScene" uid="uid://cuq5sjlgwfp4i" path="res://levels/mini-snake/mini_snake.tscn" id="8_6tx2o"]
+[ext_resource type="PackedScene" uid="uid://rlwfvff2ronp" path="res://levels/blind-pipes/blind_pipes.tscn" id="8_6tx2o"]
 [ext_resource type="PackedScene" uid="uid://cqjqjog7n71ke" path="res://ui/screens/transition-screen/transition-screen.tscn" id="8_y84hv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3c0xs"]
