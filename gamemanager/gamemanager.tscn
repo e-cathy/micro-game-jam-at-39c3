@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://77at6m3gk65p" path="res://textures/stopclock.png" id="7_3c0xs"]
 [ext_resource type="PackedScene" uid="uid://c6rymnwpyw47w" path="res://levels/sliders/sliders.tscn" id="7_6tx2o"]
 [ext_resource type="PackedScene" uid="uid://ba7e87cvw11h7" path="res://levels/find-thief/find-thief.tscn" id="7_6xjqa"]
+[ext_resource type="PackedScene" uid="uid://rlwfvff2ronp" path="res://levels/blind-pipes/blind_pipes.tscn" id="8_6tx2o"]
 [ext_resource type="PackedScene" uid="uid://cqjqjog7n71ke" path="res://ui/screens/transition-screen/transition-screen.tscn" id="8_y84hv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3c0xs"]
