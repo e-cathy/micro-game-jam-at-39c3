@@ -121,7 +121,6 @@ func check_solved():
 	var check_orientation = blocks[0].get_orientation()
 	for block in blocks:
 		if block.get_orientation() != check_orientation:
-			print(block.get_orientation(), " != ", check_orientation)
 			return false
 	return true
 
