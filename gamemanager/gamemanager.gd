@@ -51,7 +51,11 @@ func _ready() -> void:
 	%"transition-screen".transition_done.connect(_next_level)
 	
 	_show_title_screen()
-	
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen"):
+		get_window().mode = Window.MODE_FULLSCREEN if get_window().mode == Window.MODE_WINDOWED else Window.MODE_WINDOWED
+
 func _start_game() -> void:
 	level = 0
 	score = 0
